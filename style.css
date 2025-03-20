@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    left: 2rem;
+    top: 2.5rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #2980b9;
+}
+
+.listings-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.business-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: #333;
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+}
+
+.business-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.business-card p {
+    color: #666;
+    margin: 0.3rem 0;
+}
+
+.category {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.business-details-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.business-details {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.business-details h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.description {
+    margin: 1rem 0;
+    color: #666;
+}
+
+.info-grid {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.info-grid p {
+    padding: 0.5rem 0;
+}
+
+.info-grid a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.info-grid a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+    }
+    
+    .listings-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .back-link {
+        position: static;
+        display: block;
+        margin-top: 1rem;
+    }
+}

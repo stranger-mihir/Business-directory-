@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Business Details</h1>
+        <a href="index.html" class="back-link">← Back to Directory</a>
+    </header>
+
+    <div class="business-details-container">
+        <div class="business-details" id="business-details">
+            <!-- Business details will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Business Directory. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Sample business data (in real application, this would come from a database)
+        const businesses = {
+            1: {
+                name: "Tech Solutions Inc",
+                address: "123 Tech Street, Innovation City",
+                phone: "(555) 123-4567",
+                email: "contact@techsolutions.com",
+                category: "Technology",
+                description: "Leading provider of innovative tech solutions and IT services.",
+                website: "https://techsolutions.com",
+                hours: "Mon-Fri: 9AM-5PM"
+            },
+            2: {
+                name: "Green Cafe",
+                address: "456 Nature Ave, Food Town",
+                phone: "(555) 234-5678",
+                email: "info@greencafe.com",
+                category: "Restaurant",
+                description: "Organic and sustainable dining experience with fresh ingredients.",
+                website: "https://greencafe.com",
+                hours: "Mon-Sun: 8AM-9PM"
+            },
+            3: {
+                name: "Pro Fitness Gym",
+                address: "789 Health Road, Fit City",
+                phone: "(555) 345-6789",
+                email: "join@profitness.com",
+                category: "Fitness",
+                description: "State-of-the-art fitness center with professional trainers.",
+                website: "https://profitness.com",
+                hours: "Mon-Sun: 6AM-10PM"
+            }
+        };
+
+        // Get business ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const businessId = urlParams.get('id');
+        const business = businesses[businessId];
+
+        // Populate business details
+        if (business) {
+            document.getElementById('business-details').innerHTML = `
+                <h2>${business.name}</h2>
+                <span class="category">${business.category}</span>
+                <p class="description">${business.description}</p>
+                <div class="info-grid">
+                    <p><strong>Address:</strong> ${business.address}</p>
+                    <p><strong>Phone:</strong> ${business.phone}</p>
+                    <p><strong>Email:</strong> ${business.email}</p>
+                    <p><strong>Website:</strong> <a href="${business.website}" target="_blank">${business.website}</a></p>
+                    <p><strong>Hours:</strong> ${business.hours}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
